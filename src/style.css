@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root { font-family:'DM Sans',system-ui,sans-serif; color:#f0f1ef; background:#101315; font-synthesis:none; color-scheme:dark; font-size:15px; }
+* { box-sizing:border-box; }
+body { margin:0; min-height:100vh; }
+main { max-width:980px; margin:auto; padding:0 20px max(10px,env(safe-area-inset-bottom)); }
+button,a { -webkit-tap-highlight-color:transparent; }
+button { font:inherit; cursor:pointer; min-height:44px; border:1px solid #414849; color:#e9edeb; background:#23292b; border-radius:8px; padding:8px 12px; }
+button:hover { background:#323a3b; }
+button:disabled { opacity:.5; cursor:wait; }
+a { color:inherit; }
+button:focus-visible,a:focus-visible { outline:3px solid #c0f576; outline-offset:3px; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.app-header { min-height:68px; display:flex; gap:12px; align-items:center; justify-content:space-between; border-bottom:1px solid #2b3031; }
+.brand { display:flex; align-items:center; text-decoration:none; font-size:23px; font-weight:700; letter-spacing:-1px; }
+.brand-mark { background:#c3f77d; color:#142016; font-size:25px; font-weight:800; width:34px; height:34px; display:grid; place-items:center; border-radius:9px; position:relative; margin-right:9px; }
+.brand-mark span { font-size:17px; position:absolute; right:1px; top:0; }
+.brand-dot { color:#c3f77d; }
+#refresh { font-size:12px; background:transparent; white-space:nowrap; }
+#status { font-size:11px; color:#9eaaa3; line-height:1.5; margin:8px 0; }
+#status.warning { color:#efc678; }
+.team-card { --accent:#f06768; --tint:#f067680c; background:#191e20; border:1px solid #32383a; border-radius:12px; margin:10px 0 14px; overflow:hidden; }
+.team-card.steelers { --accent:#f2c34e; --tint:#f2c34e0a; }
+.team-header { display:flex; align-items:center; gap:12px; padding:12px 16px; background:linear-gradient(100deg,var(--tint),transparent); border-bottom:1px solid #303638; border-top:3px solid var(--accent); }
+.team-logo { background:#f7f7f5; border-radius:50%; width:44px; height:44px; display:grid; place-items:center; flex-shrink:0; }
+.team-logo img { width:36px; height:36px; object-fit:contain; }
+.eyebrow { font-size:10px; font-weight:600; letter-spacing:.5px; color:#a4afaa; margin:0 0 4px; }
+.team-header h2 { font-family:'Barlow Condensed','Arial Narrow',sans-serif; font-size:25px; margin:0; line-height:1.15; }
+.following { margin-left:auto; color:#9ea9a5; font-size:10px; white-space:nowrap; }
+.matches { display:grid; grid-template-columns:1fr 1fr; }
+.match { padding:14px 16px; min-width:0; }
+.match+.match { border-left:1px solid #303638; }
+.match h3 { font-size:10px; letter-spacing:1px; color:#a7b2ad; margin:0 0 8px; display:flex; align-items:center; gap:7px; }
+.small-icon { font-size:15px; color:var(--accent); }
+.competition { color:var(--accent); font-size:11px; margin:0 0 4px; }
+.match h4 { font-size:16px; font-weight:600; line-height:1.4; margin:0 0 5px; overflow-wrap:anywhere; }
+.versus { color:#95a39b; font-size:11px; font-weight:400; margin:0 2px; }
+.date { color:#a9b3ae; font-size:11px; line-height:1.5; margin:0; }
+.result { display:flex; align-items:center; justify-content:space-between; gap:8px; margin:8px 0 6px; min-height:44px; }
+.hidden-score { font-size:12px; color:#b8c2bc; }
+.reveal { font-size:12px; padding:8px 10px; background:transparent; white-space:nowrap; }
+.score { font-size:22px; font-weight:700; }
+.score small { display:block; font-size:10px; font-weight:400; color:#a9b3ae; }
+.video { display:flex; gap:8px; align-items:center; justify-content:center; text-decoration:none; background:#2b3334; border:1px solid #404849; border-radius:8px; padding:8px 12px; min-height:44px; font-size:12px; font-weight:600; }
+.video:hover { background:#353e3f; }
+.match>button.video { width:100%; }
+.countdown { display:flex; align-items:center; gap:10px; background:var(--tint); border:1px solid #39423b; border-radius:8px; margin-top:10px; padding:9px 12px; min-height:48px; }
+.pulse-dot { width:6px; height:6px; background:var(--accent); border-radius:50%; flex-shrink:0; }
+.countdown>div { display:flex; flex-wrap:wrap; align-items:center; gap:5px 12px; }
+.count-label { font-size:9px; letter-spacing:.6px; color:#a6b1aa; }
+.countdown strong { font-family:'Barlow Condensed',system-ui,sans-serif; font-size:20px; font-weight:600; letter-spacing:.3px; }
+.empty { font-size:14px; color:#c0c9c4; line-height:1.5; margin:8px 0; }
+.team-footer { border-top:1px solid #303638; padding:6px 16px; color:#9eaaa3; font-size:10px; line-height:1.4; }
+.live-note { margin:0; padding:8px 16px; color:#c3f77d; background:#273326; font-size:12px; }
+.app-footer { padding:4px 0 10px; display:flex; gap:8px; justify-content:space-between; align-items:center; font-size:10px; color:#9ca9a1; }
+#install { font-size:12px; }
+.video-dialog { width:min(760px,calc(100% - 24px)); max-height:calc(100dvh - 24px); overflow:auto; border:1px solid #414849; border-radius:12px; background:#191e20; color:#f0f1ef; padding:18px; }
+.video-dialog::backdrop { background:#000b; }
+.video-dialog h2 { font-size:20px; margin:0 0 12px; }
+.video-dialog h3 { font-size:15px; }
+.video-dialog p { color:#b1bcb7; font-size:13px; line-height:1.6; }
+.video-dialog video { width:100%; display:block; background:#000; border-radius:8px; }
+.video-close { margin-bottom:4px; }
+.video-dialog .video { width:100%; }
+@media(max-width:640px) {
+  main { padding-left:10px; padding-right:10px; }
+  .app-header { min-height:58px; gap:8px; }
+  .brand { font-size:21px; }
+  .brand-mark { width:30px; height:30px; font-size:23px; margin-right:7px; }
+  #refresh { font-size:11px; padding:8px 10px; }
+  .team-card { margin:8px 0 12px; }
+  .team-header { padding:10px 12px; gap:10px; }
+  .team-logo { width:38px; height:38px; }
+  .team-logo img { width:32px; height:32px; }
+  .team-header h2 { font-size:21px; }
+  .eyebrow { font-size:9px; margin-bottom:3px; }
+  .following { display:none; }
+  .matches { grid-template-columns:1fr; }
+  .match { padding:10px 12px; }
+  .match+.match { border-left:0; border-top:1px solid #303638; }
+  .match h3 { margin-bottom:6px; }
+  .team-footer { padding:5px 12px; }
+  .countdown { margin-top:8px; min-height:44px; padding:7px 10px; }
+  .video-dialog { padding:14px; }
+}

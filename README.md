@@ -1,6 +1,6 @@
 # My Sports
 
-Suomenkielinen, responsiivinen TypeScript/Vite-PWA Manchester Unitedin ja Pittsburgh Steelersin otteluseurantaan. Ei backendia, tietokantaa, maksullisia palveluita tai API-avaimia. Sovellusta ei ole julkaistu eikä GitHub-tiliin ole tehty muutoksia.
+Suomenkielinen, responsiivinen TypeScript/Vite-PWA Manchester Unitedin ja Pittsburgh Steelersin otteluseurantaan. Ei backendia, tietokantaa, maksullisia palveluita tai API-avaimia. Julkaisuosoite: [My Sports](https://joonakristerr.github.io/my-sports/). Lähdekoodi: [joonakristerr/my-sports](https://github.com/joonakristerr/my-sports).
 
 ## Käynnistä Windowsissa
 
@@ -10,7 +10,7 @@ Kaksoisnapsauta **My Sports.html** -tiedostoa. Se avautuu oletusselaimeen ilman 
 
 Tämä versio yrittää päivittää ottelutiedot suoraan ESPN:stä, mutta selain tai ESPN voi estää haun (testiympäristössä haku estyi). Silloin mukana toimitetut tai aiemmin tallennetut tiedot säilyvät ja sovellus varoittaa päivitysvirheestä. Niitä ei pidä tulkita ajantasaisiksi. Tiedosto ei hae uutta tilannekuvaa viereisistä JSON-tiedostoista. Videohaku tarvitsee verkkoyhteyden. Yhden paikallisen HTML-tiedoston versio ei ole asennettava PWA; siihen käytetään alempana kuvattua HTTPS-julkaisua.
 
-Uuden yhden tiedoston version muodostaminen lähdekoodista: `npm.cmd run update:data` ja `npm.cmd run build:standalone`. Uusi tiedosto syntyy projektin juureen nimellä `My Sports.html`. Suoraan file://-osoitteesta ajettava tarkistus: `node scripts/check-standalone.mjs`. Tarkistus läpäisi: offline-avaus, molemmat joukkueet, upotetut logot, mobiilileveys, tuloksen näyttö/piilotus, joukkuekohtainen suoja, uudelleenlataus, videolinkit ja datan säilyminen verkkovirheessä. Sivusto- ja PWA-version 42 yksikkötestiä ja tuotantobuild läpäisivät myös muutoksen jälkeen.
+Uuden yhden tiedoston version muodostaminen lähdekoodista: `npm.cmd run update:data` ja `npm.cmd run build:standalone`. Uusi tiedosto syntyy projektin juureen nimellä `My Sports.html`. Suoraan file://-osoitteesta ajettava tarkistus: `node scripts/check-standalone.mjs`. Tarkistus läpäisi: offline-avaus, molemmat joukkueet, upotetut logot, mobiilileveys, tuloksen näyttö/piilotus, joukkuekohtainen suoja, uudelleenlataus, videolinkit ja datan säilyminen verkkovirheessä. Sivusto- ja PWA-version 46 yksikkötestiä ja tuotantobuild läpäisivät myös muutoksen jälkeen.
 
 ### Sivusto- ja PWA-version paikallinen käyttö
 
@@ -84,7 +84,7 @@ npm.cmd run test:browser
 
 Toteutuksen yhteydessä 23.11.2026:
 
-- **42/42 Vitest-testiä läpäisi**: kaikki tehtävänannon 16 testiryhmää, todellisista ESPN-vastauksista tallennetut kiinteät esimerkit, NFL-harjoitusottelut ja pudotuspelit, rangaistuspotkutuloksen suojaus, kesäajan molemmat vaihdot, virheelliset vastaukset, timeout, XSS, videolinkit ja varatilannekuvan oikea hakuaika.
+- **46/46 Vitest-testiä läpäisi**: kaikki tehtävänannon 16 testiryhmää, todellisista ESPN-vastauksista tallennetut kiinteät esimerkit, NFL-harjoitusottelut ja pudotuspelit, rangaistuspotkutuloksen suojaus, kesäajan molemmat vaihdot, virheelliset vastaukset, timeout, XSS, videolinkit ja varatilannekuvan oikea hakuaika.
 - **TypeScript-tarkistus ja Vite-tuotantobuild läpäisivät.**
 - **Oikea ESPN-data:** United 87 yksilöllistä virallista ottelua haetuissa kausissa; mukana Valioliiga, FA Cup, liigacup ja Mestarien liiga. Steelers 35 runkosarja-/pudotuspeliottelua. Molempien edellinen ja seuraava löytyivät. Eurooppa-liigan ja Konferenssiliigan nykykauden kutsut olivat kelvollisia mutta tyhjiä; niitä ei väitetä Unitedin tämän kauden kilpailuiksi.
 - **Chromium-selaintesti läpäisi sekä juuripolussa että `/my-sports/`-alihakemistossa:** 390 px mobiili ja 1440 px työpöytä, ei vaakaylivuotoa, tulospainikkeet, joukkuekohtainen suoja, uudelleenlataus, uuden päättyneen ottelun suoja, verkkovirheen jälkeinen tietojen säilyminen, service worker, manifest/ikonit, offline-uudelleenlataus ja offline-logot. Todellinen data tuli varatilannekuvasta ESPN:n selaineston vuoksi. Ottelun vaihtumis- ja verkkovirhetilanteet simuloitiin hallituilla vastauksilla.
@@ -95,7 +95,7 @@ Tekniset paikalliset raportit ja kuvakaappaukset syntyvät gitistä pois rajattu
 
 ## Julkaise GitHub Pagesiin
 
-Tätä vaihetta ei ole suoritettu. Luo itse esimerkiksi julkinen `my-sports`-repositorio ja lisää tämän projektin lähdetiedostot. Älä lisää `node_modules`, `dist` tai `work`-hakemistoja. Julkisen repositorion Pages ja tavalliset Actions-ajot ovat käytettävissä GitHubin maksuttoman palvelun rajoissa; yksityisen repositorion saatavuus/kiintiöt riippuvat tilauksesta.
+Projekti on julkaistu GitHub Pagesiin 23.11.2026. Jos otat projektista oman kopion, luo esimerkiksi julkinen `my-sports`-repositorio ja lisää tämän projektin lähdetiedostot. Älä lisää `node_modules`, `dist` tai `work`-hakemistoja. Julkisen repositorion Pages ja tavalliset Actions-ajot ovat käytettävissä GitHubin maksuttoman palvelun rajoissa; yksityisen repositorion saatavuus/kiintiöt riippuvat tilauksesta.
 
 1. Avaa repositorion **Settings → Pages → Source → GitHub Actions**.
 2. Salli tarvittaessa repositorion Actions-työnkulut.
@@ -103,7 +103,7 @@ Tätä vaihetta ei ole suoritettu. Luo itse esimerkiksi julkinen `my-sports`-rep
 4. Työnkulku asentaa riippuvuudet, hakee ESPN-tilannekuvat, suorittaa testit, rakentaa ja julkaisee `dist`-hakemiston Pagesiin.
 5. Avaa deploy-ajon ilmoittama HTTPS-osoite, tavallisesti `https://KÄYTTÄJÄ.github.io/my-sports/`.
 
-Mukana oleva workflow on käsin ajettava ja ajastettu noin 15 minuutin välein. Ajastus alkaa toimia vasta, kun tiedostot ovat GitHubin oletushaarassa ja Actions sallittu. Muutos ei yksin julkaise sovellusta tässä paikallisessa ympäristössä. Päivitys ei tee git-committeja dataan, vaan tilannekuva on julkaisuartefaktissa. Jos et halua automaattista julkaisua, poista YAML:n `schedule`-osa ja aja työ käsin. Datakuvien jatkuva ajantasaisuus riippuu tästä julkaisupäivityksestä, jos suora ESPN-haku on estetty.
+Mukana oleva workflow käynnistyy main-haaran päivityksestä, käsin ja ajastettuna noin 15 minuutin välein. Ajastus alkaa toimia vasta, kun tiedostot ovat GitHubin oletushaarassa ja Actions sallittu. Muutos ei yksin julkaise sovellusta tässä paikallisessa ympäristössä. Päivitys ei tee git-committeja dataan, vaan tilannekuva on julkaisuartefaktissa. Jos et halua automaattista julkaisua, poista YAML:n `schedule`-osa ja aja työ käsin. Datakuvien jatkuva ajantasaisuus riippuu tästä julkaisupäivityksestä, jos suora ESPN-haku on estetty.
 
 Viten `base: './'`, suhteellinen manifest/start_url/scope, workerin sijainnista johdetut polut ja build-kohtainen worker-välimuistitunniste tukevat alihakemistoa. Uusi service worker aktivoituu, kun vanhat sovellusikkunat suljetaan; sulje ja avaa sovellus uudelleen julkaisupäivityksen jälkeen.
 
@@ -132,7 +132,7 @@ Steelersin videovalinta suosii varmennettua 4–6 minuutin virallista ottelukoos
 
 Pitkä kooste avataan käyttäjän erillisestä valinnasta Steelersin omalle sivulle, koska toisto tarvitsee palvelun oman videosoittimen. Sovellus ei kopioi, tallenna tai käytä sen kirjautumis-/toistotunnisteita eikä upota palvelun sivua. Ulkoisen sivun otsikot ja kuvat voivat paljastaa tuloksen, mistä kerrotaan painikkeessa ja katseluikkunassa. Lyhyt ESPN-kooste (nyt 0:52) jää vaihtoehdoksi oman sovelluksen sisälle ilman otsikkoa tai esikatselukuvaa.
 
-`npm.cmd run update:data` tarkistaa Steelersin virallisen pelipäiväarkiston ja etsii edellisen ottelun koko ottelun koosteen. Playwright/Chromium avaa löytyneen virallisen sivun normaalisti ja lukee videosoittimen vastauksesta vain keston. Varmennettu neutraali viite tallennetaan `src/official-videos.json`-luetteloon ja tilannekuvaan. Jos selainta tai verkkoyhteyttä ei ole tai sopivaa 4–6 minuutin videota ei löydy, pidempää versiota ei luvata: vanhat ottelukohtaiset viitteet säilyvät, eikä niitä siirretä uuteen otteluun. Luettelon muutos tulee HTML-tiedostoon vasta uudella `build:standalone`-rakennuksella. GitHub-työnkulkuun on lisätty selaimen asennus tätä tarkistusta varten; työnkulkua ei ole ajettu GitHubissa.
+`npm.cmd run update:data` tarkistaa Steelersin virallisen pelipäiväarkiston ja etsii edellisen ottelun koko ottelun koosteen. Playwright/Chromium avaa löytyneen virallisen sivun normaalisti ja lukee videosoittimen vastauksesta vain keston. Varmennettu neutraali viite tallennetaan `src/official-videos.json`-luetteloon ja tilannekuvaan. Jos selainta tai verkkoyhteyttä ei ole tai sopivaa 4–6 minuutin videota ei löydy, pidempää versiota ei luvata: vanhat ottelukohtaiset viitteet säilyvät, eikä niitä siirretä uuteen otteluun. Luettelon muutos tulee HTML-tiedostoon vasta uudella `build:standalone`-rakennuksella. GitHub-työnkulkuun on lisätty selaimen asennus tätä tarkistusta varten; työnkulun ensimmäinen datapäivitys, testaus ja rakennus läpäisivät GitHubissa.
 
 Tämän muutoksen tarkistukset: 46/46 automaattista testiä läpäisi, tuotanto- ja yhden tiedoston rakennukset onnistuivat, file://-selaintesti läpäisi. Pitkän 5:40-vaihtoehdon ensisijaisuus, oikea kohdeosoite, 0:52-vaihtoehto sekä otsikoiden, kuvien, tuloksen ja automaattisen medialatauksen puuttuminen tarkistettiin myös selaimessa. Kesto varmennettiin palvelun metadatasta; koko 5:40-videota ei katsottu läpi eikä sen saatavuutta kaikissa maissa tai selaimissa voida taata.
 
